@@ -228,40 +228,6 @@ fincoach/
 - **인터셉터**: 요청/응답 처리 및 토큰 관리
 - **TypeScript 인터페이스**: 모든 엔드포인트에 대한 타입 안정성
 
-### 차트 구현 패턴
-
-```typescript
-// 인터랙티브 차트 상태 관리
-const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
-
-// 반응형 크기 조절
-const onLayout = (event: LayoutChangeEvent) => {
-  setChartSize(event.nativeEvent.layout.width);
-};
-
-// 커스텀 센터 라벨 컴포넌트
-const centerLabel = useMemo(() => {
-  return selectedIdx !== null ? 
-    <CategoryDetail /> : <TotalAmount />;
-}, [selectedIdx]);
-```
-
-### 로딩 모달 패턴
-
-```typescript
-// 다중 API 호출 조정
-const [isLiveAdviceReady, setLiveAdviceReady] = useState(false);
-const [isMonthDataReady, setMonthDataReady] = useState(false);
-
-// 모든 비동기 작업 완료 확인
-const isLoadingComplete = isLiveAdviceReady && isMonthDataReady;
-
-// 에러 처리 시에도 로딩 상태 완료
-catch (error) {
-  setLiveAdviceReady(true);
-  setMonthDataReady(true);
-}
-```
 
 ## 🔒 보안
 
