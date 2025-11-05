@@ -139,20 +139,10 @@ RootNavigator
     └── Settings / Menu
 ```
 
-### 애플리케이션 플로우
-
-1. **Splash** → **Auth** (로그인/회원가입)
-2. **Auth** → **Onboarding** (인증/분석)
-3. **Onboarding** → **Main** (앱 기능 사용)
-4. **EasyLogin**: 재방문 사용자를 위한 빠른 인증 경로
-
 ### 상태 관리
 
 - **Jotai atoms**를 활용한 원자적 상태 관리
 - 도메인별로 구조화된 상태 atoms (`src/state/*/atoms.ts`)
-- 주요 전역 상태:
-  - `isSignedInAtom`: 사용자 인증 상태
-  - `certCompletedAtom`: 인증 완료 상태
 
 ### 보안 아키텍처
 
